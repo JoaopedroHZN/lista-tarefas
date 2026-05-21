@@ -43,3 +43,8 @@ Certifique-se de ter o [Node.js](https://nodejs.org/) instalado em sua máquina.
 2. Abra o terminal na raiz do projeto e instale as dependências:
    ```bash
    npm install
+Inicie o servidor de desenvolvimento local:
+
+Bash
+npm run dev
+Abra o navegador no endereço indicado pelo terminal (geralmente http://localhost:5173).
