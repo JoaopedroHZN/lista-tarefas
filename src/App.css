@@ -1,0 +1,161 @@
+/* =========================================
+   VARIÁVEIS DE TEMA (CLARO E ESCURO)
+   ========================================= */
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.4s ease, color 0.4s ease;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* O fundo e a cor do texto quando o tema for CLARO */
+.app-container.claro {
+  background-color: #f0f2f5;
+  color: #333;
+}
+
+/* O fundo e a cor do texto quando o tema for ESCURO */
+.app-container.escuro {
+  background-color: #18191a;
+  color: #e4e6eb;
+}
+
+/* =========================================
+   ESTILOS DO CARTÃO DE TAREFAS
+   ========================================= */
+.card-tarefas {
+  background-color: transparent; /* Deixa o fundo do container assumir */
+  width: 100%;
+  max-width: 450px;
+  padding: 30px;
+  border-radius: 16px;
+  /* Sombra muda dependendo se tá claro ou escuro usando currentColor */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.05); /* Leve transparência pro modo escuro */
+  backdrop-filter: blur(10px);
+}
+
+.claro .card-tarefas {
+  background-color: #ffffff;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+header h1 {
+  font-size: 24px;
+  margin: 0;
+}
+
+.btn-tema {
+  background: none;
+  border: 1px solid currentColor;
+  color: inherit;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-tema:hover {
+  background-color: rgba(128, 128, 128, 0.2);
+}
+
+/* =========================================
+   INPUT E BOTÃO DE ADICIONAR
+   ========================================= */
+.area-input {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.area-input input {
+  flex: 1;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  background-color: transparent;
+  color: inherit;
+}
+
+.claro .area-input input {
+  background-color: #fff;
+}
+
+.escuro .area-input input {
+  background-color: #242526;
+  border-color: #3a3b3c;
+}
+
+.btn-adicionar {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 0 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.2s;
+}
+
+.btn-adicionar:hover {
+  background-color: #2980b9;
+}
+
+/* =========================================
+   LISTA DE TAREFAS
+   ========================================= */
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 15px;
+  border-radius: 8px;
+  border: 1px solid rgba(128, 128, 128, 0.2);
+  transition: all 0.2s;
+}
+
+li span {
+  cursor: pointer;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Efeito quando a tarefa está concluída */
+li.concluida span {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
+.btn-remover {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  opacity: 0.6;
+  transition: 0.2s;
+}
+
+.btn-remover:hover {
+  opacity: 1;
+  transform: scale(1.1);
+}
